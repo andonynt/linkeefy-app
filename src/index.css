@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .center {
+    @apply container mx-auto px-6 lg:px-10 xl:px-20
+  }
+  .show {
+    @apply visible opacity-100;
+  }
+  .hide {
+    @apply invisible opacity-0;
+  }
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+body.waiting * { 
+  cursor: wait; 
+}
+
+.text-pancy{
+  color: rgb(129 41 217/1);
+}
+
+.fade {
+  animation-duration: 1s;
+  animation-name: fadeAnimation;
+}
+
+@keyframes fadeAnimation {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Banner background */
+
+/* .banner:before {
+  content:'';
+  position: absolute;
+  width: 30vh;
+  height: 30vh;
+  background-color: rgba(255, 128, 0, .3);
+  border-radius: 46% 54% 31% 69% / 64% 59% 41% 36%;
+  transform: translate(100px, 50px);
+  animation-duration: 20s;
+  animation-name: breathe;
+  animation-iteration-count: infinite;
+}
+
+@keyframes breathe{
+  0% {
+    opacity: 0;
+    scale: 1;
+  }
+  25%{
+    opacity: 1;
+    scale: 1.05;
+  }
+  50%{
+    opacity: 1;
+    scale: 1.1;
+  }
+  75%{
+    opacity: 1;
+    scale: 1.075;
+  }
+  100% {
+    opacity: 0;
+    scale: 1;
+  }
+}
+
+.banner:after {
+  content:'';
+  position: absolute;
+  width: 30vh;
+  height: 30vh;
+  background-color: rgba(255, 255, 255, .25);
+  border-radius: 28% 72% 82% 18% / 19% 17% 83% 81%;
+  transform: translate(120px, -250px);
+  animation-duration: 15s;
+  animation-name: breathe;
+  animation-iteration-count: infinite;
+} */
+
+/* Card */
+.card {
+  position: absolute;
+  top: 0;
+}
+
+/* Rotate animation */
+.rotate {
+  animation-duration: 5s;
+  animation-name: rotate;
+  animation-iteration-count: infinite;
+}
+
+@keyframes rotate {
+  0% {
+transform: rotate(0deg);
+
+  }
+
+  25% {
+transform: rotate(3deg);
+
+  }
+
+  50% {
+transform: rotate(0deg);
+
+  }
+
+  75% {
+transform: rotate(-3deg);
+
+  }
+
+  100% {
+transform: rotate(0deg);
+
+  }
+}
+
+/* Verify modal - Create account Route */
+.verify-modal {
+  opacity: 0;
+  visibility: none;
+  transition-duration: .25s;
+}
+.check-circle:hover + .verify-modal {
+  opacity: 1;
+  visibility: visible;
+}
+
