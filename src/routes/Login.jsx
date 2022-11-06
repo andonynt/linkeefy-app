@@ -189,7 +189,7 @@ const Login = () => {
                     <input
                       ref={passwordRef}
                       className='mt-2 outline-none text-base py-4 px-5 rounded-xl bg-gray-200 w-full'
-                      type='text'
+                      type='password'
                       placeholder='test123'
                     />
                   </label>
