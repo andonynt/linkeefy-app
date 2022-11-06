@@ -343,7 +343,7 @@ const AdminProfile = () => {
           <h2 className='text-2xl lg:text-4xl font-bold'>Share your account</h2>
           <p>Share your profile everywhere.</p>
           <a
-            href={`https://linkeefy-app.firebaseapp.com/user/${userInfo.username}`}
+            href={`https://linkeefy-app.firebaseapp.com/user/${user.username}`}
             target='_blank'
             className='flex flex-wrap items-center text-lg lg:text-2xl'>
             <div className='p-2 bg-green-400 rounded-xl'>
@@ -355,7 +355,7 @@ const AdminProfile = () => {
             <input
               className='outline-none'
               type='text'
-              defaultValue={`linkeefy-app.firebaseapp.com/user/${userInfo.username}`}
+              defaultValue={`linkeefy-app.firebaseapp.com/user/${user.username}`}
               ref={linkUserRef}
             />
             <span
