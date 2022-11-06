@@ -705,6 +705,10 @@ video {
   margin-right: auto;
 }
 
+.ml-2{
+  margin-left: 0.5rem;
+}
+
 .ml-1{
   margin-left: 0.25rem;
 }
@@ -747,10 +751,6 @@ video {
 
 .mt-10{
   margin-top: 2.5rem;
-}
-
-.ml-2{
-  margin-left: 0.5rem;
 }
 
 .block{
@@ -885,6 +885,10 @@ video {
 
 .min-w-\[350px\]{
   min-width: 350px;
+}
+
+.min-w-full{
+  min-width: 100%;
 }
 
 .max-w-full{
@@ -1028,22 +1032,12 @@ video {
   margin-bottom: calc(2.5rem * var(--tw-space-y-reverse));
 }
 
-.space-x-3 > :not([hidden]) ~ :not([hidden]){
-  --tw-space-x-reverse: 0;
-  margin-right: calc(0.75rem * var(--tw-space-x-reverse));
-  margin-left: calc(0.75rem * calc(1 - var(--tw-space-x-reverse)));
-}
-
 .self-end{
   align-self: flex-end;
 }
 
 .self-center{
   align-self: center;
-}
-
-.text-ellipsis{
-  text-overflow: ellipsis;
 }
 
 .rounded-full{
@@ -1095,6 +1089,16 @@ video {
 .bg-white{
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.bg-green-400{
+  --tw-bg-opacity: 1;
+  background-color: rgb(74 222 128 / var(--tw-bg-opacity));
+}
+
+.bg-blue-200{
+  --tw-bg-opacity: 1;
+  background-color: rgb(191 219 254 / var(--tw-bg-opacity));
 }
 
 .bg-green-500{
@@ -1190,21 +1194,6 @@ video {
   background-color: rgb(242 233 235 / var(--tw-bg-opacity));
 }
 
-.bg-green-400{
-  --tw-bg-opacity: 1;
-  background-color: rgb(74 222 128 / var(--tw-bg-opacity));
-}
-
-.bg-blue-300{
-  --tw-bg-opacity: 1;
-  background-color: rgb(147 197 253 / var(--tw-bg-opacity));
-}
-
-.bg-blue-200{
-  --tw-bg-opacity: 1;
-  background-color: rgb(191 219 254 / var(--tw-bg-opacity));
-}
-
 .fill-black{
   fill: #000;
 }
@@ -1228,6 +1217,16 @@ video {
 
 .p-8{
   padding: 2rem;
+}
+
+.py-1{
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
+.px-3{
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
 }
 
 .py-3{
@@ -1285,16 +1284,6 @@ video {
   padding-bottom: 3.5rem;
 }
 
-.px-3{
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
-}
-
-.py-1{
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
-}
-
 .pt-\[137px\]{
   padding-top: 137px;
 }
@@ -1312,11 +1301,6 @@ video {
   line-height: 2rem;
 }
 
-.text-sm{
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-}
-
 .text-lg{
   font-size: 1.125rem;
   line-height: 1.75rem;
@@ -1330,6 +1314,11 @@ video {
 .text-4xl{
   font-size: 2.25rem;
   line-height: 2.5rem;
+}
+
+.text-sm{
+  font-size: 0.875rem;
+  line-height: 1.25rem;
 }
 
 .text-base{
