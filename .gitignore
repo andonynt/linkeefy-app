@@ -23,3 +23,10 @@ dist-ssr
 *.sln
 *.sw?
 .env
+.firebaserc
+firestore.indexes.json
+firestore.rules
+storage.rules
+build
+.firebase
+
