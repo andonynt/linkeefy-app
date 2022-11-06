@@ -19,7 +19,7 @@ const User = () => {
       navigate('/not-found');
       return;
     }
-    console.log(info);
+    // console.log(info);
     setUserInfo(info);
     setIsLoading(false);
   }
