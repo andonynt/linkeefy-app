@@ -5,7 +5,6 @@ import { Link, useNavigate } from 'react-router-dom';
 
 import Loader from '../components/shared/Loader';
 import { AuthProvider } from '../components/componentsDispatcher';
-import { FaFacebookF, FaGoogle } from 'react-icons/fa';
 
 import {
   auth,

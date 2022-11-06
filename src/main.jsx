@@ -8,6 +8,7 @@ import {
   Dashboard,
   Signup,
   CreateUsername,
+  User,
 } from './routes/routesDispatcher';
 
 const root = document.getElementById('root');
@@ -20,7 +21,7 @@ ReactDOM.createRoot(root).render(
       <Route path='/signup' element={<Signup />} />
       <Route path='/create-username' element={<CreateUsername />} />
       <Route path='/admin/' element={<Dashboard />} />
-      {/* <Route path='/user/:username' element={<UserDashBoard />} /> */}
+      <Route path='/user/:username' element={<User />} />
       <Route path='/*' element={<NotFound />} />
     </Routes>
   </BrowserRouter>

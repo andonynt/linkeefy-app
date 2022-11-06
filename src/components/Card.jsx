@@ -10,7 +10,7 @@ import logo from '../assets/logo.png';
 
 const Card = () => {
   return (
-    <div className='rotate w-[260px] h-[541px] bg-mustardBrown text-white p-6 flex flex-col rounded-2xl capitalize'>
+    <div className='rotate w-[260px] min-h-[541px] bg-mustardBrown text-white p-6 flex flex-col rounded-2xl capitalize'>
       {/* Profile */}
       <div className='flex flex-col items-center'>
         <img
@@ -18,21 +18,16 @@ const Card = () => {
           src='https://media.istockphoto.com/vectors/schnautzer-face-wearing-sunglasses-isolated-vector-illustration-vector-id1137372279?k=20&m=1137372279&s=612x612&w=0&h=NKAv6FaY-smn7gbevUtpqZZmvZNzJl4MMycx6rUxJNU='
           alt=''
         />
-        <h3 className='mt-1'>@teddytheboss</h3>
+        <h3 className='mt-2'>@teddytheboss</h3>
       </div>
 
-      {/* Description */}
+      {/* Bio */}
       <div className='text-center mt-2'>
         <h3 className='font-bold'>ocupation</h3>
-        <p>personal description</p>
-      </div>
-
-      <div className='mt-3'>
-        <h3>skills</h3>
-        <ul>
-          <li className='list-disc list-inside'>skill #1</li>
-          <li className='list-disc list-inside'>skill #2</li>
-        </ul>
+        <p className='lg:text-base text-sm mt-2'>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias,
+          impedit?
+        </p>
       </div>
 
       {/* Links */}

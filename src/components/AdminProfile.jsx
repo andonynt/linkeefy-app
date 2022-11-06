@@ -3,6 +3,7 @@ import logo from '../assets/logo.png';
 import { Link, useNavigate } from 'react-router-dom';
 import Button from './shared/Button';
 import backgrounds from '../scripts/backgrounds';
+import isHex from '../scripts/isHex';
 /* Components */
 import { LinkActions, SocialMediaActions } from './componentsDispatcher';
 /* State */
@@ -17,6 +18,8 @@ import {
 } from '../firebase/index';
 import { signOut } from 'firebase/auth';
 /* Icons */
+import { MdClear } from 'react-icons/md';
+import { AiOutlineMenu, AiOutlineGlobal } from 'react-icons/ai';
 import socialMediaLinks from '../scripts/socialMediaLinks';
 
 const AdminProfile = () => {
@@ -29,12 +32,32 @@ const AdminProfile = () => {
   const [query, setQuery] = useState('');
   const [profilePicture, setProfilePicture] = useState(null);
 
+  /* Share button */
+  function openActions() {
+    const $element = document.querySelector('.actions');
+    $element.classList.remove('opacity-0');
+    $element.classList.remove('invisible');
+    $element.classList.add('opacity-1');
+    $element.classList.add('visible');
+  }
+  function closeActionModals() {
+    const $element = document.querySelector('.actions');
+    $element.classList.add('opacity-0');
+    $element.classList.add('invisible');
+    $element.classList.remove('opacity-1');
+    $element.classList.remove('visible');
+  }
+  function copyLink() {
+    const link = linkUserRef.current.value;
+    linkUserRef.current.select();
+  }
+
   const filteredItems = socialMediaLinks.filter((media) => {
     return media.app.toLowerCase().includes(query.toLowerCase());
   });
 
   /* Refs */
-  const usernameRef = useRef(),
+  const linkUserRef = useRef(),
     titleRef = useRef(),
     urlRef = useRef(),
     urlMediaRef = useRef(),
@@ -299,12 +322,6 @@ const AdminProfile = () => {
     }
   }
 
-  function isHex(color) {
-    let regex = /^#([A-F0-9]{3,4}|[A-F0-9]{6}|[A-F0-9]{8})$/i;
-    // console.log(regex.exec(color));
-    return regex.exec(color);
-  }
-
   useEffect(() => {
     setUserInfo(user);
   }, []);
@@ -312,8 +329,49 @@ const AdminProfile = () => {
   useEffect(() => {
     checkProfilePhoto();
   }, [userInfo.photo]);
+
   return (
     <>
+      {/* Actions Modal */}
+      <section className='actions fixed inset-0 backdrop-blur-md flex justify-center items-center z-30 opacity-0 invisible duration-300'>
+        <div
+          onClick={closeActionModals}
+          className='absolute top-4 right-4 bg-red-400 p-2 rounded-full cursor-pointer'>
+          <MdClear className='lg:w-8 lg:h-8 w-6 h-6 fill-black ' />
+        </div>
+        <div className='flex flex-col bg-white rounded-xl shadow-2xl p-4 space-y-4'>
+          <h2 className='text-2xl lg:text-4xl font-bold'>Share your account</h2>
+          <p>Share your profile everywhere.</p>
+          <a
+            href={`linkeefy-app.firebaseapp.com/user/${userInfo.username}`}
+            target='_blank'
+            className='flex flex-wrap items-center text-lg lg:text-2xl'>
+            <div className='p-2 bg-green-400 rounded-xl'>
+              <AiOutlineGlobal />
+            </div>
+            <p className='font-semibold ml-2'>Open your profile</p>
+          </a>
+          <div>
+            <input
+              className='outline-none'
+              type='text'
+              defaultValue={`linkeefy-app.firebaseapp.com/user/${userInfo.username}`}
+              ref={linkUserRef}
+            />
+            <span
+              onClick={copyLink}
+              className='bg-blue-200 py-1 px-3 rounded-xl cursor-pointer'>
+              copy
+            </span>
+          </div>
+          <Button
+            onClick={handleSignOut}
+            className='flex justify-center items-center'
+            background='#000'>
+            sign out
+          </Button>
+        </div>
+      </section>
       {/* Done Modal */}
       <div
         id='modal'
@@ -325,20 +383,18 @@ const AdminProfile = () => {
       {/* Main section */}
       <section className='min-h-screen flex flex-col lg:w-2/3 lg:border-black lg:border-r-[1px]'>
         {/* Navigation section */}
-        <div className='h-20 px-6 py-5 flex justify-between border-black border-b-[1px]'>
+        <div className='h-20 px-6 py-5 flex justify-between border-black border-b-[1px] relative'>
           <Link to='/'>
             <div className='flex items-center'>
               <img className='h-full w-[65px]' src={logo} alt='logo' />
               <h1 className='ml-1 font-medium'>Linkeefy</h1>
             </div>
           </Link>
-          <Button
-            onClick={handleSignOut}
-            className='flex justify-center items-center'
-            background='#000'
-            rounded='full'>
-            sign out
-          </Button>
+
+          <AiOutlineMenu
+            className='flex justify-center items-center cursor-pointer w-8 h-8'
+            onClick={openActions}
+          />
         </div>
         {/* Profile section */}
         <div className='flex-grow center py-10 space-y-6'>
@@ -618,7 +674,7 @@ const AdminProfile = () => {
                   }
                   background='#e0719e'
                   className='w-fit text-black hover:bg-[#7fd6c2] hover:text-gray-700 duration-300 ease-out '>
-                  apply background
+                  set custom
                 </Button>
               </div>
               {/* Flat color */}
@@ -637,8 +693,8 @@ const AdminProfile = () => {
           </section>
           <button
             onClick={handleRemoveBackground}
-            className='py-3 px-4 bg-[#dc3545] text-white font-medium rounded-xl'>
-            Remove
+            className='py-3 px-4 bg-[#dc3545] text-white font-semibold rounded-xl'>
+            Remove background
           </button>
         </div>
       </section>

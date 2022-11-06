@@ -46,12 +46,12 @@ const LinkActions = ({ title, url, uid, onEditLink, onDeleteLink }) => {
   }, [title, url]);
 
   return (
-    <div className='flex items-center justify-between'>
+    <div className='flex items-center justify-between flex-wrap gap-4'>
       {/* Edit mode */}
       {isEdit ? (
-        <div className='flex space-x-4'>
+        <div className='flex gap-4 flex-wrap'>
           <input
-            className='outline-none text-base py-4 px-5 rounded-xl bg-gray-200 w-fit fade'
+            className='outline-none text-base py-4 px-5 rounded-xl bg-gray-200 w-fit max-w-full fade'
             type='text'
             ref={titleEditRef}
             autoComplete='off'
@@ -59,7 +59,7 @@ const LinkActions = ({ title, url, uid, onEditLink, onDeleteLink }) => {
             onChange={handleChangeTitle}
           />
           <input
-            className='outline-none text-base py-4 px-5 rounded-xl bg-gray-200 w-fit fade'
+            className='outline-none text-base py-4 px-5 rounded-xl bg-gray-200 w-fit max-w-full fade'
             type='text'
             ref={urlEditRef}
             autoComplete='off'
@@ -74,7 +74,7 @@ const LinkActions = ({ title, url, uid, onEditLink, onDeleteLink }) => {
       )}
 
       {/* Buttons */}
-      <div className='flex space-x-3'>
+      <div className='flex gap-3 flex-wrap'>
         {/* Show edit or save button */}
         {isEdit ? (
           <button

@@ -6,7 +6,6 @@ const Button = styled.button`
   border-radius: 10px;
   background-color: ${(props) => props.background};
   color: ${(props) => (props.background === '#ccc' ? '#000' : '#FFF')};
-  border-radius: ${(props) => (props.rounded === 'full' ? '50px' : '')};
   font-weight: 600;
 `;
 

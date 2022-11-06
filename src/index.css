@@ -28,6 +28,7 @@ body.waiting * {
   color: rgb(129 41 217/1);
 }
 
+
 .fade {
   animation-duration: 1s;
   animation-name: fadeAnimation;
