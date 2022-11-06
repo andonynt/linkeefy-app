@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import isHex from '../scripts/isHex';
 import socialMediaLinks from '../scripts/socialMediaLinks';
 import Loader from '../components/shared/Loader';
@@ -7,6 +7,7 @@ import Loader from '../components/shared/Loader';
 import { getInfoByUsername, getImageByPath } from '../firebase/index';
 const User = () => {
   const { username } = useParams();
+  const navigate = useNavigate();
 
   const [userInfo, setUserInfo] = useState({});
   const [isLoading, setIsLoading] = useState(true);
@@ -14,6 +15,11 @@ const User = () => {
 
   async function getUserInfo() {
     const info = await getInfoByUsername(username);
+    if (!info) {
+      navigate('/not-found');
+      return;
+    }
+    console.log(info);
     setUserInfo(info);
     setIsLoading(false);
   }
@@ -35,7 +41,7 @@ const User = () => {
     checkProfilePhoto();
   }, [userInfo.photo]);
 
-  if (!isLoading) {
+  if (!isLoading && userInfo) {
     return (
       <section
         style={
