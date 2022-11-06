@@ -46,9 +46,9 @@ const User = () => {
                 objectFit: 'cover',
               }
         }
-        className='w-full min-h-screen bg-gray-800 flex justify-center items-center'>
+        className='w-full min-h-screen bg-gray-800 flex justify-center items-center px-6'>
         {/* Preview */}
-        <div className='w-[300px] min-h-[600px] bg-black text-white rounded-3xl py-8 px-4 space-y-3 fade'>
+        <div className='max-w-2xl w-full min-h-[600px] bg-black text-white rounded-3xl py-8 px-4 space-y-3 fade'>
           {/* Image */}
           <div className='flex justify-center'>
             {userInfo.photo ? (
