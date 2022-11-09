@@ -10,7 +10,7 @@ import logo from '../assets/logo.png';
 
 const Card = () => {
   return (
-    <div className='rotate w-[260px] min-h-[541px] bg-mustardBrown text-white p-6 flex flex-col rounded-2xl capitalize'>
+    <div className='rotate w-[260px] min-h-[541px] bg-black text-white p-6 flex flex-col rounded-2xl capitalize'>
       {/* Profile */}
       <div className='flex flex-col items-center'>
         <img
@@ -32,11 +32,11 @@ const Card = () => {
 
       {/* Links */}
       <div className='mt-3 space-y-2'>
-        <div className='cursor-pointer w-full h-[45px] font-semibold rounded-lg flex justify-center items-center text-sm bg-[#5b7c99] hover:bg-gray-500 duration-200 ease-in-out'>
+        <div className='cursor-pointer text-black w-full h-[45px] font-semibold rounded-lg flex justify-center items-center text-sm bg-[#e0719e] hover:bg-gray-500 duration-200 ease-in-out'>
           <p>my website</p>
         </div>
 
-        <div className='cursor-pointer w-full h-[45px] font-semibold rounded-lg flex justify-center items-center text-sm bg-gray-600 hover:bg-[#1f271b] duration-200 ease-in-out'>
+        <div className='cursor-pointer text-black w-full h-[45px] font-semibold rounded-lg flex justify-center items-center text-sm bg-[#e0719e] hover:bg-[#1f271b] duration-200 ease-in-out'>
           <p>my personal blog</p>
         </div>
       </div>

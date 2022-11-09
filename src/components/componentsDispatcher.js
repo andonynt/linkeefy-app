@@ -5,3 +5,4 @@ export { default as AuthProvider } from './AuthProvider';
 export { default as AdminProfile } from './AdminProfile';
 export { default as LinkActions } from './ProfileComponents/LinkActions';
 export { default as SocialMediaActions } from './ProfileComponents/SocialMediaActions';
+export { default as Footer } from './Footer'

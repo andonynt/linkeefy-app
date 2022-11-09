@@ -43,7 +43,7 @@ const NavBar = () => {
           {/* Logo */}
           <Link to='/'>
             <div className='flex items-center'>
-              <img className='w-[106px] h-[65px]' src={logo} alt='' />
+              <img className='w-[106px] h-[65px]' src={logo} alt='logo' />
               <h1 className='capitalize text-2xl font-semibold lg:block hidden'>
                 linkeefy
               </h1>
@@ -52,9 +52,9 @@ const NavBar = () => {
 
           {/* Links */}
           <div className='lg:flex items-center lg:space-x-8 font-medium capitalize hidden'>
-            <Link to='/'>home</Link>
-            <Link to='/'>discover</Link>
-            <Link to='/'>contact</Link>
+            <a href='#home'>home</a>
+            <a href='#discover'>discover</a>
+            <a href='#how'>how it works</a>
           </div>
 
           {/* Account */}

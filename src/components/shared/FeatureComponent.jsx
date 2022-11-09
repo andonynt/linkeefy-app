@@ -1,33 +1,9 @@
 import React, { useEffect } from 'react';
 
 const FeatureComponent = ({ feature }) => {
-  let current = 1,
-    previous = 0;
-
-  useEffect(() => {
-    if (feature.loop) {
-      const interval = setInterval(() => {
-        const $cards = document.querySelectorAll('.card');
-
-        $cards[current].classList.add('show');
-        $cards[current].classList.remove('hide');
-
-        $cards[previous].classList.remove('show');
-        $cards[previous].classList.add('hide');
-
-        current += 1;
-        previous = current - 1;
-
-        if (current === 3) current = 0;
-
-        if (current === 1) previous = 0;
-      }, 3000);
-      return () => clearInterval(interval);
-    }
-  }, []);
-
   return (
     <div
+      id={feature.id}
       className={`${feature.styles.background} fade pt-[137px] min-h-screen flex w-full`}>
       <section
         className={`flex-grow center flex ${feature.styles.mobileDirection} justify-center ${feature.styles.desktopDirection} items-center lg:mt-0 py-14`}>
@@ -45,7 +21,7 @@ const FeatureComponent = ({ feature }) => {
 
         {/* Image */}
         <div
-          className={`banner relative w-full ${feature.styles.customImageHeight} lg:w-1/2 flex justify-center`}>
+          className={`banner relative w-full lg:w-1/2 ${feature.styles.customImageHeight} flex justify-center`}>
           {feature.image}
         </div>
       </section>

@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import './styles/main.css';
-import { NavBar, FeatureComponent } from './components/componentsDispatcher';
+import {
+  NavBar,
+  FeatureComponent,
+  Footer,
+} from './components/componentsDispatcher';
 import features from './components/LandingPage/features';
 import Loader from './components/shared/Loader';
 
@@ -42,6 +46,7 @@ const App = () => {
         {features.map((feature, index) => {
           return <FeatureComponent key={index} feature={feature} />;
         })}
+        <Footer />
       </>
     );
   }
