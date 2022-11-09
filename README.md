@@ -13,7 +13,7 @@ Linkeefy is a React + Firebase app that allows you to share your favorite links 
 
 ## Link
 
-https://linkeefy-app.web.app/
+linkeefy-app.web.app/
 
 ## License
 
