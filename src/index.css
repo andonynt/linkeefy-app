@@ -18,8 +18,12 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
+* {
+  border:1px solid green;
+}
 
 body {
   font-family: 'Poppins', sans-serif;
