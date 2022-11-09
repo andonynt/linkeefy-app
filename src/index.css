@@ -16,8 +16,14 @@
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+
 body {
   font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
 }
 
 body.waiting * { 
@@ -45,6 +51,25 @@ body.waiting * {
 }
 
 /* Banner background */
+
+.banner {
+  position: relative;
+  z-index: 2;
+}
+
+.banner::before {
+  content: '';
+  position: absolute;
+  transform: scale(-1);
+  top: -100px;
+  left: 0;
+  width: 500px;
+  height: 500px;
+  background-image: url('../assets/images/blob.svg');
+  background-repeat: no-repeat;
+  margin: auto;
+  z-index: -1;
+}
 
 /* .banner:before {
   content:'';
@@ -132,6 +157,43 @@ transform: rotate(-3deg);
   100% {
 transform: rotate(0deg);
 
+  }
+}
+
+/* Spotify, Twitter, Youtube - Landing Page */
+.socials {
+  position: relative;
+  background: url('../assets/images/phone.png');
+  z-index: 10;
+}
+
+.socials::before {
+  content: '';
+  width: 278px;
+  height: 574px;
+  border-radius: 45px;
+  background-size: cover;
+  position: absolute;
+  margin: auto;
+  z-index: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  animation: switchImgs 15s infinite ease-in-out;
+  transition: all .3s ease-in;
+  background-image: url('../assets/images/feature-spotify.png');
+}
+
+@keyframes switchImgs {
+  33% {
+    background-image: url('../assets/images/feature-twitter.png');
+  }
+  66% {
+    background-image: url('../assets/images/feature-youtube.png');
+  }
+  99% {
+    background-image: url('../assets/images/feature-spotify.png');
   }
 }
 
